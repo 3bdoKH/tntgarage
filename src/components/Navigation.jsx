@@ -23,7 +23,7 @@ const Navigation = () => {
       <div className="nav-container">
         <div className="nav-brand">
           <Link to="/" className="brand-link" onClick={closeMenu}>
-            <span className="brand-text">TNT Garage</span>
+            <img src={require('../logo.png')} alt="TNT Garage Logo" className="brand-logo" />
           </Link>
         </div>
 

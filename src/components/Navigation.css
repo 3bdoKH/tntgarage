@@ -39,14 +39,15 @@
   color: #007bff;
 }
 
-.brand-icon {
-  font-size: 2rem;
-  margin-right: 10px;
+.brand-logo {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-.brand-text {
-  font-size: 1.5rem;
-  font-weight: 700;
+.brand-link:hover .brand-logo {
+  transform: scale(1.05);
 }
 
 .nav-menu {
@@ -153,14 +154,14 @@
   .nav-container {
     padding: 0 15px;
   }
+  
+  .brand-logo {
+    height: 40px;
+  }
 }
 
 @media (max-width: 480px) {
-  .brand-text {
-    font-size: 1.2rem;
-  }
-  
-  .brand-icon {
-    font-size: 1.5rem;
+  .brand-logo {
+    height: 35px;
   }
 } 

@@ -96,6 +96,7 @@ const Form = () => {
                                 onChange={handleChange}
                                 placeholder="أدخل رقم الهاتف"
                                 required
+                                style={{direction: 'rtl'}}
                             />
                         </div>
                     </div>
