@@ -1,7 +1,7 @@
 .bmw-container {
     position: absolute;
     left: 20px;
-    top: 50%;
+    top: 300px;
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
@@ -35,6 +35,7 @@
         max-width: 300px;
         display: flex;
         flex-direction: column;
+        top: 0;
     }
     .bmw-brands {
         flex-direction: row;

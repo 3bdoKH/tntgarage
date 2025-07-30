@@ -9,13 +9,18 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: #333;
-  background-color: #f8f9fa;
+  background-color: transparent;
 }
 
 .App {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background:  url('./germany.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .main-content {

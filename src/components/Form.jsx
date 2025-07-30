@@ -22,35 +22,28 @@ const Form = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         
-        // WhatsApp number (you can change this to your desired number)
-        const whatsappNumber = '+201091094406' // Replace with your actual WhatsApp number
-        
-        // Format the message in Arabic
+        const whatsappNumber = '+201091094406'
         const message = `مرحباً، أريد حجز موعد
 
-البيانات الشخصية:
-الاسم: ${formData.name}
-رقم الهاتف: ${formData.contactNumber}
+                        البيانات الشخصية:
+                        الاسم: ${formData.name}
+                        رقم الهاتف: ${formData.contactNumber}
+                        
+                        بيانات السيارة :
+                        نوع السيارة : ${formData.carType}
+                        ماركة السيارة : ${formData.carBrand}
+                        موديل السيارة : ${formData.carModel}
+                        سنة الصنع : ${formData.year}
+                        نوع ناقل الحركة : ${formData.transmission}
 
-بيانات السيارة:
-نوع السيارة: ${formData.carType}
-ماركة السيارة: ${formData.carBrand}
-موديل السيارة: ${formData.carModel}
-سنة الصنع: ${formData.year}
-نوع ناقل الحركة: ${formData.transmission}
+                        شكراً لكم`
 
-شكراً لكم`
-
-        // Encode the message for URL
         const encodedMessage = encodeURIComponent(message)
         
-        // Create WhatsApp URL
         const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
         
-        // Open WhatsApp in new tab
         window.open(whatsappURL, '_blank')
         
-        // Optional: Reset form after sending
         setFormData({
             name: '',
             contactNumber: '',

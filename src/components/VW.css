@@ -1,7 +1,7 @@
 .vw-container {
     position: absolute;
     right: 20px;
-    top: 50%;
+    top: 300px;
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
@@ -11,6 +11,7 @@
     padding: 20px;
     max-width: 200px;
     cursor: pointer;
+    z-index: 1000;
 }
 
 .vw-container h2 {
@@ -36,6 +37,7 @@
         align-items: center;
         display: flex;
         flex-direction: column;
+        top: 0;
     }
     .vw-brands {
         flex-direction: row;

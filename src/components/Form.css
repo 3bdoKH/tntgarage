@@ -2,16 +2,17 @@
     display: flex;
     max-width: 1200px;
     margin: 50px auto;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     min-height: 600px;
+    backdrop-filter: blur(10px);
 }
 
 .image-section {
     flex: 1;
-    background: #f8f9fa;
+    background: rgba(248, 249, 250, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,7 +71,7 @@
     padding: 12px 15px;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
-    background: #f8f9fa;
+    background: rgba(248, 249, 250, 0.9);
     font-size: 1rem;
     color: #333;
     cursor: pointer;
