@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section">
-          <h3>TNT Garage</h3>
+          <img src={require('../logo.png')} alt="TNT Garage Logo" className="footer-logo" />
           <p>Your trusted source for quality car spare parts and automotive solutions.</p>
           <div className="social-links">
             <a href="https://wa.me/+201091094406" target="_blank" rel="noopener noreferrer" className="social-link">

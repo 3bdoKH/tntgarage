@@ -14,6 +14,19 @@
   gap: 40px;
 }
 
+.footer-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 20px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+  transform: scale(1.05);
+}
+
 .footer-section h3 {
   font-size: 1.5rem;
   margin-bottom: 20px;
@@ -129,6 +142,10 @@
     padding: 0 15px;
   }
   
+  .footer-logo {
+    height: 50px;
+  }
+  
   .footer-bottom-content {
     flex-direction: column;
     text-align: center;
@@ -147,6 +164,10 @@
   
   .footer-section h4 {
     font-size: 1.1rem;
+  }
+  
+  .footer-logo {
+    height: 45px;
   }
   
   .social-links {
