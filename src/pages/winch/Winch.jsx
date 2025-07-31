@@ -1,11 +1,182 @@
-import React from 'react'
+import React from 'react';
+import './winch.css';
+import { useNavigate } from 'react-router-dom';
 
 const Winch = () => {
-    return (
-        <div>
-        
-        </div>
-    )
-}
+  const navigate = useNavigate();
 
-export default Winch
+  const handleContactClick = () => {
+    const phoneNumber = '+01111132621';
+    window.open(`tel:${phoneNumber}`, '_blank');
+  };
+
+  const handleWhatsAppClick = () => {
+    const phoneNumber = '+01111132621';
+    const message = encodeURIComponent('مرحباً، أحتاج خدمة ونش انقاذ');
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+  };
+
+  return (
+    <div className="winch-page">
+      <div className="winch-hero">
+        <div className="hero-content">
+          <h1 className="hero-title">ونش انقاذ</h1>
+          <p className="hero-subtitle">خدمة مجانية تابع لوزارة الخارجية</p>
+          <div className="hero-buttons">
+            <button className="contact-btn" onClick={handleContactClick}>
+              <span className="btn-icon">📞</span>
+              اتصل الآن
+            </button>
+            <button className="whatsapp-btn" onClick={handleWhatsAppClick}>
+              <span className="btn-icon">💬</span>
+              واتساب
+            </button>
+          </div>
+        </div>
+        <div className="hero-image">
+          <div className="car-animation">
+            <img src={require('./winch.png')} alt="winch" />
+          </div>
+        </div>
+      </div>
+
+      <div className="services-section">
+        <div className="container">
+          <h2 className="section-title">خدماتنا</h2>
+          <div className="services-grid">
+            <div className="service-card">
+              <div className="service-icon">🚗</div>
+              <h3>سحب و انقاذ السيارات</h3>
+              <p>نقدم جميع خدمات انقاذ السيارات التي قد تحتاج اليها، سواء سحب أو رفع السيارات</p>
+            </div>
+            <div className="service-card">
+              <div className="service-icon">⚡</div>
+              <h3>استجابة سريعة</h3>
+              <p>وصول سريع خلال 15 دقيقة بحد أقصى، نعمل 24 ساعة على مدار الساعة</p>
+            </div>
+            <div className="service-card">
+              <div className="service-icon">🔧</div>
+              <h3>تغيير الاطارات</h3>
+              <p>نساعدك على تغيير واستبدال الإطارات في الطريق حال تعطلك</p>
+            </div>
+            <div className="service-card">
+              <div className="service-icon">⛽</div>
+              <h3>نقل الوقود</h3>
+              <p>نساعدك على التزود بالوقود في أي طريق خالي من محطات التزويد</p>
+            </div>
+            <div className="service-card">
+              <div className="service-icon">🔋</div>
+              <h3>شحن بطاريات السيارة</h3>
+              <p>نساعدك على شحن البطارية في أي وقت، نحن دائماً في خدمتك</p>
+            </div>
+            <div className="service-card">
+              <div className="service-icon">🛡️</div>
+              <h3>ضمان الجودة</h3>
+              <p>خدمة مضمونة وموثوقة مع فريق عمل محترف ومدرب</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="contact-section">
+        <div className="container">
+          <h2 className="section-title">تواصل معنا</h2>
+          <div className="contact-info">
+            <div className="contact-item">
+              <div className="contact-icon">📞</div>
+              <div className="contact-details">
+                <h3>أرقام الهاتف</h3>
+                <p>01111132621</p>
+              </div>
+            </div>
+            <div className="contact-item">
+              <div className="contact-icon">🕒</div>
+              <div className="contact-details">
+                <h3>ساعات العمل</h3>
+                <p>24/7 متاح على مدار الساعة</p>
+                <p>طوال أيام الأسبوع</p>
+              </div>
+            </div>
+            <div className="contact-item">
+              <div className="contact-icon">📍</div>
+              <div className="contact-details">
+                <h3>المنطقة</h3>
+                <p>جميع أنحاء الجمهورية</p>
+                <p>الطرق السريعة والصحراوية</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="how-it-works">
+        <div className="container">
+          <h2 className="section-title">كيف تعمل الخدمة</h2>
+          <div className="steps-grid">
+            <div className="step-card">
+              <div className="step-number">1</div>
+              <h3>اتصل بنا</h3>
+              <p>اتصل على أحد أرقامنا المخصصة أو راسلنا على واتساب</p>
+            </div>
+            <div className="step-card">
+              <div className="step-number">2</div>
+              <h3>حدد الموقع</h3>
+              <p>أخبرنا بموقع سيارتك بدقة وأخبرنا بنوع المشكلة</p>
+            </div>
+            <div className="step-card">
+              <div className="step-number">3</div>
+              <h3>انتظر الوصول</h3>
+              <p>سنصل إليك خلال 15 دقيقة بحد أقصى</p>
+            </div>
+            <div className="step-card">
+              <div className="step-number">4</div>
+              <h3>الإصلاح والنقل</h3>
+              <p>نقوم بسحب سيارتك ونقلها إلى أقرب مركز خدمة أو الوجهة المطلوبة</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="features-section">
+        <div className="container">
+          <h2 className="section-title"> tnt garage مميزات ونش الانقاذ من</h2>
+          <div className="features-grid">
+            <div className="feature-item">
+              <h3>🏆 نحن اسرع ونش انقاذ</h3>
+              <p>وصول خلال 15 دقيقة بحد أقصى</p>
+            </div>
+            <div className="feature-item">
+              <h3>📍 نحن اقرب ونش انقاذ</h3>
+              <p>أكثر من 100 ونش منتشر في جميع المناطق</p>
+            </div>
+            <div className="feature-item">
+              <h3>💰 نحن ارخص ونش انقاذ</h3>
+              <p>أسعار موحدة على كافة أنحاء الجمهورية</p>
+            </div>
+            <div className="feature-item">
+              <h3>🛡️ أمان تام</h3>
+              <p>ونش مزود بأجهزة تتبع GPS للأمان التام</p>
+            </div>
+            <div className="feature-item">
+              <h3>👨‍🔧 طاقم محترف</h3>
+              <p>سائقين وناشين احترافي ومدرب على سحب السيارات</p>
+            </div>
+            <div className="feature-item">
+              <h3>⏰ خدمة 24/7</h3>
+              <p>نعمل على مدار الساعة كل يوم لمدة 24 ساعة</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="back-section">
+        <button className="back-btn" onClick={() => navigate('/')}>
+          <span className="btn-arrow">←</span>
+          العودة للرئيسية
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Winch;

@@ -10,103 +10,103 @@ import VW from "../components/VW";
 
 const cars = [
   {
-    name : "BMW",
-    featured : "bmw-side",
-    showcase : "bmw-front",
-    specs : {
-      model : "2024",
-      quality : "100%",
-      service : "24/7"
+    name: "BMW",
+    featured: "bmw-side",
+    showcase: "bmw-front",
+    specs: {
+      model: "2024",
+      quality: "100%",
+      service: "24/7"
     }
   },
   {
-    name : "Volkswagen",
-    featured : "volks-side",
-    showcase : "volks-front",
-    specs : {
-      model : "2024",
-      quality : "100%",
-      service : "24/7"
+    name: "Volkswagen",
+    featured: "volks-side",
+    showcase: "volks-front",
+    specs: {
+      model: "2024",
+      quality: "100%",
+      service: "24/7"
     }
   },
   {
-    name : "Audi",
-    featured : "audi-side",
-    showcase : "audi-front",
-    specs : {
-      model : "2024",
-      quality : "100%",
-      service : "24/7"
+    name: "Audi",
+    featured: "audi-side",
+    showcase: "audi-front",
+    specs: {
+      model: "2024",
+      quality: "100%",
+      service: "24/7"
     }
   },
   {
-    name : "Bentley",
-    featured : "bently-side",
-    showcase : "bently-front",
-    specs : {
-      model : "2024",
-      quality : "100%",
-      service : "24/7"
+    name: "Bentley",
+    featured: "bently-side",
+    showcase: "bently-front",
+    specs: {
+      model: "2024",
+      quality: "100%",
+      service: "24/7"
     }
   },
   {
-    name : "Rolls-Royce",
-    featured : "rolls-side",
-    showcase : "rolls-front",
-    specs : {
-      model : "2024",
-      quality : "100%",
-      service : "24/7"
+    name: "Rolls-Royce",
+    featured: "rolls-side",
+    showcase: "rolls-front",
+    specs: {
+      model: "2024",
+      quality: "100%",
+      service: "24/7"
     }
   },
   {
-    name : "Lamborghini",
-    featured : "lambo-side",
-    showcase : "hero",
-    specs : {
-      model : "2024",
-      quality : "100%",
-      service : "24/7"
+    name: "Lamborghini",
+    featured: "lambo-side",
+    showcase: "hero",
+    specs: {
+      model: "2024",
+      quality: "100%",
+      service: "24/7"
     }
   },
   {
-    name : "Mini Cooper",
-    featured : "mini-side",
-    showcase : "mini-front",
-    specs : {
-      model : "2024",
-      quality : "100%",
-      service : "24/7"
+    name: "Mini Cooper",
+    featured: "mini-side",
+    showcase: "mini-front",
+    specs: {
+      model: "2024",
+      quality: "100%",
+      service: "24/7"
     }
   },
   {
-    name : "Porsche",
-    featured : "porsche-side",
-    showcase : "porsche-front",
-    specs : {
-      model : "2024",
-      quality : "100%",
-      service : "24/7"
+    name: "Porsche",
+    featured: "porsche-side",
+    showcase: "porsche-front",
+    specs: {
+      model: "2024",
+      quality: "100%",
+      service: "24/7"
     }
   },
   {
-    name : "Skoda",
-    featured : "skoda-side",
-    showcase : "skoda-front",
-    specs : {
-      model : "2024",
-      quality : "100%",
-      service : "24/7"
+    name: "Skoda",
+    featured: "skoda-side",
+    showcase: "skoda-front",
+    specs: {
+      model: "2024",
+      quality: "100%",
+      service: "24/7"
     }
   },
   {
-    name : "Seat",
-    featured : "seat-side",
-    showcase : "seat-front",
-    specs : {
-      model : "2024",
-      quality : "100%",
-      service : "24/7"
+    name: "Seat",
+    featured: "seat-side",
+    showcase: "seat-front",
+    specs: {
+      model: "2024",
+      quality: "100%",
+      service: "24/7"
     }
   },
 ]
@@ -135,20 +135,22 @@ const Home = () => {
     <div className="home">
       <div className="car-showcase">
         <div className="lower-showcase">
-          <div className="main-title">TNT GARAGE</div>
+          <div className="main-title">
+            <img src={require('../logo-tr.png')} alt="TNT Garage Logo" className="brand-logo" />
+          </div>
           <div className="interactive-bar">
             <div className="gradient-circle"></div>
             <div className="gradient-fill"></div>
             <button className="order-btn" onClick={() => window.location.href = '#form'}>احجز الآن</button>
           </div>
           <div className="featured-car">
-            <img 
-              src={require(`../${currentCar.featured}.png`)} 
-              alt={`${currentCar.name} - Featured German Car`} 
+            <img
+              src={require(`../${currentCar.featured}.png`)}
+              alt={`${currentCar.name} - Featured German Car`}
               className={`featured-car-image ${isAnimating ? 'car-fade-out' : 'car-fade-in'}`}
             />
             <div className="car-name-display">
-              <h3 
+              <h3
                 className={`car-name ${isAnimating ? 'name-fade-out' : 'name-fade-in'}`}
                 key={currentCar.name}
               >
@@ -173,21 +175,21 @@ const Home = () => {
         </div>
         <div className="upper-showcase">
           <div className="car-image-container">
-            <img 
-              src={require(`../${currentCar.showcase}.png`)} 
-              alt={`${currentCar.name} - Premium German Car`} 
+            <img
+              src={require(`../${currentCar.showcase}.png`)}
+              alt={`${currentCar.name} - Premium German Car`}
               className={`showcase-car ${isAnimating ? 'showcase-fade-out' : 'showcase-fade-in'}`}
             />
           </div>
           <div className="separator"></div>
           <p className="car-description">
-            Experience the pinnacle of German engineering with our premium selection of BMW and Volkswagen vehicles. 
+            Experience the pinnacle of German engineering with our premium selection of BMW and Volkswagen vehicles.
             Each car represents the perfect blend of luxury, performance, and cutting-edge technology.
           </p>
         </div>
       </div>
-        <BMW />
-        <VW />
+      <BMW />
+      <VW />
       <div className="brands-section">
         <div className="container">
           <h2 className="brands-title">German Automotive Excellence</h2>
@@ -223,7 +225,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      
+
       <div className="features-section">
         <div className="container">
           <h2>Services</h2>
@@ -234,7 +236,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Form  />
+      <Form />
     </div>
   );
 };
