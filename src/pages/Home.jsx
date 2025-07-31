@@ -181,7 +181,7 @@ const Home = () => {
           </div>
           <div className="separator"></div>
           <p className="car-description">
-            Experience the pinnacle of German engineering with our premium selection of BMW, Mercedes, and Audi vehicles. 
+            Experience the pinnacle of German engineering with our premium selection of BMW and Volkswagen vehicles. 
             Each car represents the perfect blend of luxury, performance, and cutting-edge technology.
           </p>
         </div>
