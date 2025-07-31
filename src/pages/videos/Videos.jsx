@@ -45,10 +45,51 @@ const Videos = () => {
         setSelectedVideo(null);
     };
 
-    const getYouTubeEmbedUrl = (url) => {
-        // Convert YouTube URL to embed URL
-        const videoId = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/);
-        return videoId ? `https://www.youtube.com/embed/${videoId[1]}` : url;
+    const getVideoEmbedUrl = (url) => {
+        // Convert video URL to embed URL
+        let embedUrl = url;
+
+        console.log('Converting URL:', url);
+
+        // Handle YouTube URLs
+        if (url.includes('youtube.com') || url.includes('youtu.be')) {
+            let videoId = null;
+
+            // Handle youtu.be short URLs
+            if (url.includes('youtu.be/')) {
+                videoId = url.split('youtu.be/')[1].split('?')[0];
+                console.log('youtu.be videoId:', videoId);
+            }
+            // Handle youtube.com/watch?v= URLs
+            else if (url.includes('youtube.com/watch?v=')) {
+                videoId = url.split('v=')[1].split('&')[0];
+                console.log('youtube.com videoId:', videoId);
+            }
+            // Handle youtube.com/embed/ URLs
+            else if (url.includes('youtube.com/embed/')) {
+                videoId = url.split('embed/')[1].split('?')[0];
+                console.log('embed videoId:', videoId);
+            }
+
+            embedUrl = videoId ? `https://www.youtube.com/embed/${videoId}` : url;
+            console.log('YouTube embed URL:', embedUrl);
+        }
+        // Handle Streamable URLs
+        else if (url.includes('streamable.com/')) {
+            // If it's already in embed format, use as is
+            if (url.includes('streamable.com/e/')) {
+                embedUrl = url;
+                console.log('Streamable already in embed format:', embedUrl);
+            } else {
+                // Convert to embed format
+                const videoId = url.split('streamable.com/')[1].split('?')[0];
+                embedUrl = `https://streamable.com/e/${videoId}`;
+                console.log('Streamable embed URL:', embedUrl);
+            }
+        }
+
+        console.log('Final embed URL:', embedUrl);
+        return embedUrl;
     };
 
     if (loading) {
@@ -73,7 +114,6 @@ const Videos = () => {
             </div>
         );
     }
-
     return (
         <div className="videos-page">
             <div className="page-header">
@@ -123,7 +163,7 @@ const Videos = () => {
                         <button className="close-btn" onClick={closeVideoModal}>×</button>
                         <div className="video-container">
                             <iframe
-                                src={getYouTubeEmbedUrl(selectedVideo.url)}
+                                src={getVideoEmbedUrl(selectedVideo.url)}
                                 title={selectedVideo.description}
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

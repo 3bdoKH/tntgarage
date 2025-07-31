@@ -71,7 +71,6 @@ const AdminDashboard = () => {
         fetchVideos();
     }, []);
 
-    // Parts CRUD operations
     const handlePartSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -157,6 +156,16 @@ const AdminDashboard = () => {
         e.preventDefault();
         try {
             setLoading(true);
+
+            // Convert Streamable URL to embed format if needed
+            let processedUrl = videoForm.url;
+            if (processedUrl.includes('streamable.com/') && !processedUrl.includes('streamable.com/e/')) {
+                // Extract video ID from streamable URL
+                const videoId = processedUrl.split('streamable.com/')[1].split('?')[0];
+                processedUrl = `https://streamable.com/e/${videoId}`;
+                console.log('Converted Streamable URL:', processedUrl);
+            }
+
             const url = editingVideo
                 ? `${API_BASE_URL}/videos/${editingVideo._id}`
                 : `${API_BASE_URL}/videos`;
@@ -168,7 +177,10 @@ const AdminDashboard = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(videoForm),
+                body: JSON.stringify({
+                    ...videoForm,
+                    url: processedUrl
+                }),
             });
 
             const data = await response.json();
