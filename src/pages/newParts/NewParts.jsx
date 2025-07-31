@@ -8,7 +8,7 @@ const NewParts = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
-    const API_BASE_URL = 'http://localhost:5000/api';
+    const API_BASE_URL = 'https://emereld-marketing.online/api';
 
     useEffect(() => {
         fetchNewParts();
