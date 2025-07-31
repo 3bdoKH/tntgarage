@@ -4,7 +4,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
@@ -25,7 +27,7 @@ body {
 
 .main-content {
   flex: 1;
-  padding-top: 80px; /* Account for fixed navigation */
+  padding-top: 70px; /* Account for fixed navigation */
 }
 
 /* Container */

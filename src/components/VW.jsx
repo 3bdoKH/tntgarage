@@ -8,7 +8,11 @@ const VW = () => {
         { name: 'Audi', image: '/images/vw/audi.jpeg' },
         { name: 'Seat', image: '/images/vw/seat.jpeg' },
         { name: 'Skoda', image: '/images/vw/skoda.jpeg' },
-        { name: 'Cupra', image: '/images/vw/cupra.jpeg' }
+        { name: 'Cupra', image: '/images/vw/cupra.jpeg' },
+        { name: 'Lamborghini', image: '/images/vw/lamborghini.jpeg' },
+        { name: 'Porsche', image: '/images/vw/porsche.jpeg' },
+        { name: 'Bently', image: '/images/vw/bently.jpeg' },
+        { name: 'Ducati', image: '/images/vw/ducati.jpeg' },
     ]
 
     const [currentIndex, setCurrentIndex] = useState(0)
@@ -33,19 +37,21 @@ const VW = () => {
     const displayBrands = getDisplayBrands()
 
     return (
-        <div className="vw-container" onClick={() => navigate('/vw-group')}>
-            <h2>Volkswagen Group</h2>
-            <div className="vw-brands">
-                {displayBrands.map((brand, index) => (
-                    <div key={`${brand.name}-${currentIndex}-${index}`} className="brand-item">
-                        <img 
-                            src={brand.image} 
-                            alt={brand.name} 
-                            className="brand-image"
-                        />
-                        <h3 className="brand-name">{brand.name}</h3>
-                    </div>
-                ))}
+        <div className="vw-wrapper">
+            <div className="vw-container" onClick={() => navigate('/vw-group')}>
+                <h2>Volkswagen Group</h2>
+                <div className="vw-brands">
+                    {displayBrands.map((brand, index) => (
+                        <div key={`${brand.name}-${currentIndex}-${index}`} className="brand-item">
+                            <img 
+                                src={brand.image} 
+                                alt={brand.name} 
+                                className="brand-image"
+                            />
+                            <h3 className="brand-name">{brand.name}</h3>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     )

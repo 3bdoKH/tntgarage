@@ -56,7 +56,7 @@ const Form = () => {
     }
 
     return (
-        <div className="form-split-container">
+        <div className="form-split-container" id="form">
             <div className="image-section">
                 <img src={require('./form.png')} alt="Car Form" className="form-image" />
             </div>
