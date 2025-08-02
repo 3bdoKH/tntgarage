@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './winch.css';
 import { useNavigate } from 'react-router-dom';
 
 const Winch = () => {
   const navigate = useNavigate();
-
+  useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+  }, []);
   const handleContactClick = () => {
     const phoneNumber = '+01111132621';
     window.open(`tel:${phoneNumber}`, '_blank');

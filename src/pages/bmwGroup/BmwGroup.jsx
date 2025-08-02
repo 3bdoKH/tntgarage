@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './BmwGroup.css';
 import { useNavigate } from 'react-router-dom';
+import Form from '../../components/Form';
 
 const BmwGroup = () => {
     const navigate = useNavigate();
-
+    useEffect(() => {
+        // Scroll to top when component mounts
+        window.scrollTo(0, 0);
+    }, []);
     const handleContactClick = () => {
         const phoneNumber = '+01111132621';
         window.open(`tel:${phoneNumber}`, '_blank');
@@ -140,7 +144,7 @@ const BmwGroup = () => {
                     </div>
                 </div>
             </div>
-
+            <Form />
             <div className="back-section">
                 <button className="back-btn" onClick={() => navigate('/')}>
                     <span className="btn-arrow">←</span>

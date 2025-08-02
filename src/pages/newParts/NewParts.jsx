@@ -15,7 +15,10 @@ const NewParts = () => {
     useEffect(() => {
         fetchNewParts();
     }, []);
-
+    useEffect(() => {
+        // Scroll to top when component mounts
+        window.scrollTo(0, 0);
+    }, []);
     useEffect(() => {
         // Filter parts based on search term
         if (searchTerm.trim() === '') {

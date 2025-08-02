@@ -15,7 +15,10 @@ const Videos = () => {
     useEffect(() => {
         fetchVideos();
     }, []);
-
+    useEffect(() => {
+        // Scroll to top when component mounts
+        window.scrollTo(0, 0);
+    }, []);
     useEffect(() => {
         // Generate video durations after videos are loaded
         if (videos.length > 0) {

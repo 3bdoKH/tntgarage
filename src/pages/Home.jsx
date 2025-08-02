@@ -117,6 +117,11 @@ const Home = () => {
   const currentCar = cars[currentCarIndex];
 
   useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       setIsAnimating(true);
       setTimeout(() => {
@@ -160,7 +165,7 @@ const Home = () => {
             <div className="specs-box">
               <div className="spec-item">
                 <span className="spec-label">Model</span>
-                <span className="spec-value">{currentCar.specs?.model || "2024"}</span>
+                <span className="spec-value">{"2025"}</span>
               </div>
               <div className="spec-item">
                 <span className="spec-label">Quality</span>
@@ -194,12 +199,12 @@ const Home = () => {
         <div className="container">
           <h2 className="brands-title">German Automotive Excellence</h2>
           <div className="brands-grid">
-            <div className="brand-card">
+            <div className="brand-card" onClick={() => window.location.href = '/bmw-group'}>
               <div className="brand-icon">🔧</div>
               <h3>BMW Group</h3>
               <p>Premium performance and luxury engineering</p>
             </div>
-            <div className="brand-card">
+            <div className="brand-card" onClick={() => window.location.href = '/vw-group'}>
               <div className="brand-icon">⚡</div>
               <h3>Volkswagen Group</h3>
               <p>Reliability and advanced technology</p>
