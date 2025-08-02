@@ -231,6 +231,50 @@ const Home = () => {
         </div>
       </div>
 
+      <div className="inspection-section">
+        <div className="container">
+          <div className="inspection-content">
+            <div className="inspection-header">
+              <h2 className="inspection-title">فحص شامل للسيارات المستعملة قبل الشراء</h2>
+              <div className="inspection-icon">🔍</div>
+            </div>
+            <div className="inspection-description">
+              <p>
+                نقدّم خدمة الكشف الفني المتكامل على السيارات المستعملة لضمان حالتها الفنية قبل إتمام عملية الشراء.
+                نقوم بفحص المحرك، الفتيس، الشاسيه، الكهرباء، العفشة، والدهان باستخدام أحدث الأجهزة،
+                مع تقديم تقرير مفصل عن حالة السيارة لتساعدك في اتخاذ قرارك بثقة واطمئنان.
+              </p>
+            </div>
+            <div className="inspection-features">
+              <div className="inspection-feature">
+                <span className="feature-icon">⚙️</span>
+                <span>فحص المحرك</span>
+              </div>
+              <div className="inspection-feature">
+                <span className="feature-icon">🔧</span>
+                <span>فحص الفتيس</span>
+              </div>
+              <div className="inspection-feature">
+                <span className="feature-icon">🏗️</span>
+                <span>فحص الشاسيه</span>
+              </div>
+              <div className="inspection-feature">
+                <span className="feature-icon">⚡</span>
+                <span>فحص الكهرباء</span>
+              </div>
+              <div className="inspection-feature">
+                <span className="feature-icon">🛠️</span>
+                <span>فحص العفشة</span>
+              </div>
+              <div className="inspection-feature">
+                <span className="feature-icon">🎨</span>
+                <span>فحص الدهان</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="features-section">
         <div className="container">
           <h2>Services</h2>
