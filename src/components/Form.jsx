@@ -21,8 +21,8 @@ const Form = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        
-        const whatsappNumber = '+201091094406'
+
+        const whatsappNumber = '+201111132621'
         const message = `مرحباً، أريد حجز موعد
 
                         البيانات الشخصية:
@@ -39,11 +39,11 @@ const Form = () => {
                         شكراً لكم`
 
         const encodedMessage = encodeURIComponent(message)
-        
+
         const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
-        
+
         window.open(whatsappURL, '_blank')
-        
+
         setFormData({
             name: '',
             contactNumber: '',
@@ -60,17 +60,17 @@ const Form = () => {
             <div className="image-section">
                 <img src={require('./form.png')} alt="Car Form" className="form-image" />
             </div>
-            
+
             <div className="form-section">
                 <form className="car-form" onSubmit={handleSubmit}>
                     <h1 className="form-title">أدخل بيانات سيارتك</h1>
-                    
+
                     <div className="form-group">
                         <label>الاسم الكامل</label>
                         <div className="input-wrapper">
-                            <input 
-                                type="text" 
-                                name="name" 
+                            <input
+                                type="text"
+                                name="name"
                                 value={formData.name}
                                 onChange={handleChange}
                                 placeholder="أدخل اسمك الكامل"
@@ -82,14 +82,14 @@ const Form = () => {
                     <div className="form-group">
                         <label>رقم الهاتف</label>
                         <div className="input-wrapper">
-                            <input 
-                                type="tel" 
-                                name="contactNumber" 
+                            <input
+                                type="tel"
+                                name="contactNumber"
                                 value={formData.contactNumber}
                                 onChange={handleChange}
                                 placeholder="أدخل رقم الهاتف"
                                 required
-                                style={{direction: 'rtl'}}
+                                style={{ direction: 'rtl' }}
                             />
                         </div>
                     </div>
@@ -97,9 +97,9 @@ const Form = () => {
                     <div className="form-group">
                         <label>إختر نوع السيارة</label>
                         <div className="input-wrapper">
-                            <input 
-                                type="text" 
-                                name="carType" 
+                            <input
+                                type="text"
+                                name="carType"
                                 value={formData.carType}
                                 onChange={handleChange}
                                 placeholder="أدخل نوع السيارة"
@@ -111,9 +111,9 @@ const Form = () => {
                     <div className="form-group">
                         <label>إختر ماركة السيارة</label>
                         <div className="input-wrapper">
-                            <input 
-                                type="text" 
-                                name="carBrand" 
+                            <input
+                                type="text"
+                                name="carBrand"
                                 value={formData.carBrand}
                                 onChange={handleChange}
                                 placeholder="أدخل ماركة السيارة"
@@ -125,9 +125,9 @@ const Form = () => {
                     <div className="form-group">
                         <label>إختر موديل السيارة</label>
                         <div className="input-wrapper">
-                            <input 
-                                type="text" 
-                                name="carModel" 
+                            <input
+                                type="text"
+                                name="carModel"
                                 value={formData.carModel}
                                 onChange={handleChange}
                                 placeholder="أدخل موديل السيارة"
@@ -139,9 +139,9 @@ const Form = () => {
                     <div className="form-group">
                         <label>إختر سنة الصنع</label>
                         <div className="input-wrapper">
-                            <input 
-                                type="text" 
-                                name="year" 
+                            <input
+                                type="text"
+                                name="year"
                                 value={formData.year}
                                 onChange={handleChange}
                                 placeholder="أدخل سنة الصنع"
@@ -153,19 +153,16 @@ const Form = () => {
                     <div className="form-group">
                         <label>إختر نوع ناقل الحركة</label>
                         <div className="input-wrapper">
-                            <input 
-                                type="text" 
-                                name="transmission" 
-                                value={formData.transmission}
-                                onChange={handleChange}
-                                placeholder="أدخل نوع ناقل الحركة"
-                                required
-                            />
+                            <select name="transmission" id="transmission" value={formData.transmission} onChange={handleChange}>
+                                <option value="automatic">اوتوماتيك</option>
+                                <option value="manual">يدوي</option>
+                            </select>
+
                         </div>
                     </div>
 
                     <button type="submit" className="search-btn">
-                    حجز موعد
+                        حجز موعد
                     </button>
                 </form>
             </div>

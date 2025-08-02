@@ -4,6 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
+/frontend/src/pages/admin/Login.css
+/frontend/src/pages/admin/AdminDashboard.css
+/frontend/src/pages/admin/AdminDashboard.jsx
+/frontend/src/pages/admin/Login.jsx
 
 # testing
 /coverage

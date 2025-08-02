@@ -32,6 +32,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #7B8A8C;
 }
 
 .car-form {
@@ -116,7 +117,7 @@
     .form-split-container {
         margin: 30px 20px;
     }
-    
+
     .image-section,
     .form-section {
         padding: 30px;
@@ -129,27 +130,27 @@
         margin: 20px;
         min-height: auto;
     }
-    
+
     .image-section {
         padding: 20px;
         order: 2;
         display: none;
     }
-    
+
     .form-section {
         padding: 30px 20px;
         order: 1;
     }
-    
+
     .form-title {
         font-size: 1.6rem;
     }
-    
+
     .input-wrapper input {
         padding: 10px 12px;
         font-size: 0.9rem;
     }
-    
+
     .search-btn {
         padding: 12px;
         font-size: 1rem;
@@ -160,16 +161,16 @@
     .form-split-container {
         margin: 10px;
     }
-    
+
     .image-section,
     .form-section {
         padding: 15px;
     }
-    
+
     .form-title {
         font-size: 1.4rem;
     }
-    
+
     .form-group label {
         font-size: 0.9rem;
     }

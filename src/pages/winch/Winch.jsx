@@ -40,6 +40,39 @@ const Winch = () => {
         </div>
       </div>
 
+      {/* Aman Section */}
+      <div className="aman-section">
+        <div className="container">
+          <div className="aman-content">
+            <div className="aman-image">
+              <img src={require('./aman.jpg')} alt="Aman Winch" />
+            </div>
+            <div className="aman-text">
+              <h2 className="aman-title">ونش انقاذ معتمد وسريع</h2>
+              <p className="aman-description">
+                ونش انقاذ معتمد وسريع تابع لشركه آمان التابعه لوزاره الداخليه..
+                <br />
+                <strong>نصلك اينما كنت...</strong>
+              </p>
+              <div className="aman-features">
+                <div className="aman-feature">
+                  <span className="feature-icon">✅</span>
+                  <span>معتمد من وزارة الداخلية</span>
+                </div>
+                <div className="aman-feature">
+                  <span className="feature-icon">⚡</span>
+                  <span>استجابة سريعة</span>
+                </div>
+                <div className="aman-feature">
+                  <span className="feature-icon">📍</span>
+                  <span>نصلك أينما كنت</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="services-section">
         <div className="container">
           <h2 className="section-title">خدماتنا</h2>
@@ -53,21 +86,6 @@ const Winch = () => {
               <div className="service-icon">⚡</div>
               <h3>استجابة سريعة</h3>
               <p>وصول سريع خلال 15 دقيقة بحد أقصى، نعمل 24 ساعة على مدار الساعة</p>
-            </div>
-            <div className="service-card">
-              <div className="service-icon">🔧</div>
-              <h3>تغيير الاطارات</h3>
-              <p>نساعدك على تغيير واستبدال الإطارات في الطريق حال تعطلك</p>
-            </div>
-            <div className="service-card">
-              <div className="service-icon">⛽</div>
-              <h3>نقل الوقود</h3>
-              <p>نساعدك على التزود بالوقود في أي طريق خالي من محطات التزويد</p>
-            </div>
-            <div className="service-card">
-              <div className="service-icon">🔋</div>
-              <h3>شحن بطاريات السيارة</h3>
-              <p>نساعدك على شحن البطارية في أي وقت، نحن دائماً في خدمتك</p>
             </div>
             <div className="service-card">
               <div className="service-icon">🛡️</div>

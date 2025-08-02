@@ -324,6 +324,8 @@
     align-items: center;
     gap: 10px;
     box-shadow: 0 8px 20px rgba(0, 132, 255, 0.4);
+    top: 60px !important;
+    left: 20px !important;
 }
 
 .back-btn:hover {
@@ -383,6 +385,105 @@
     font-size: 1rem;
 }
 
+/* Aman Section Styles */
+.aman-section {
+    padding: 80px 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.aman-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.aman-image {
+    flex: 1;
+    max-width: 500px;
+}
+
+.aman-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.aman-image img:hover {
+    transform: scale(1.05);
+}
+
+.aman-text {
+    flex: 1;
+    max-width: 500px;
+}
+
+.aman-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #0084ff 50%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+}
+
+.aman-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: #f0f0f0;
+    text-align: right;
+}
+
+.aman-description strong {
+    color: #0084ff;
+    font-weight: 700;
+}
+
+.aman-features {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.aman-feature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.aman-feature:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(-5px);
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+    min-width: 30px;
+}
+
+.aman-feature span:last-child {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Responsive Design for Aman Section */
 @media (max-width: 768px) {
     .winch-hero {
         flex-direction: column;
@@ -441,6 +542,39 @@
     .feature-item h3 {
         font-size: 1.2rem;
     }
+
+    .aman-content {
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 20px;
+    }
+
+    .aman-image {
+        max-width: 100%;
+    }
+
+    .aman-text {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .aman-title {
+        font-size: 2rem;
+    }
+
+    .aman-description {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .aman-features {
+        align-items: center;
+    }
+
+    .aman-feature {
+        width: 100%;
+        max-width: 400px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -472,5 +606,30 @@
         width: 100%;
         max-width: 300px;
         justify-content: center;
+    }
+
+    .aman-section {
+        padding: 60px 0;
+    }
+
+    .aman-title {
+        font-size: 1.8rem;
+    }
+
+    .aman-description {
+        font-size: 1rem;
+    }
+
+    .aman-feature {
+        padding: 12px 15px;
+    }
+
+    .feature-icon {
+        font-size: 1.2rem;
+        min-width: 25px;
+    }
+
+    .aman-feature span:last-child {
+        font-size: 1rem;
     }
 }

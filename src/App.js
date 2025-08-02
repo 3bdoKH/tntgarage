@@ -11,9 +11,12 @@ import Winch from "./pages/winch/Winch";
 import BmwGroup from "./pages/bmwGroup/BmwGroup";
 import VwGroup from "./pages/vwGroup/VwGroup";
 import AdminDashboard from "./pages/admin/AdminDashboard";
+import Login from "./pages/admin/Login";
+
 // Import components
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -29,7 +32,15 @@ function App() {
             <Route path="/winch" element={<Winch />} />
             <Route path="/bmw-group" element={<BmwGroup />} />
             <Route path="/vw-group" element={<VwGroup />} />
-            <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/admin-login" element={<Login />} />
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute>
+                  <AdminDashboard />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </main>
         <Footer />
