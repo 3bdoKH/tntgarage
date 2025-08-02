@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWhatsapp, faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faWhatsapp, faFacebook, faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
@@ -12,14 +12,17 @@ const Footer = () => {
           <img src={require('../logo.png')} alt="TNT Garage Logo" className="footer-logo" />
           <p>Your trusted source for quality car spare parts and automotive solutions.</p>
           <div className="social-links">
-            <a href="https://wa.me/+201091094406" target="_blank" rel="noopener noreferrer" className="social-link">
+            <a href="https://wa.me/+201111132621" target="_blank" rel="noopener noreferrer" className="social-link">
               <FontAwesomeIcon icon={faWhatsapp} />
             </a>
-            <a href="#" className="social-link">
+            <a href="https://www.facebook.com/Tntgarage.maadi/" className="social-link">
               <FontAwesomeIcon icon={faFacebook} />
             </a>
-            <a href="#" className="social-link">
+            <a href="https://www.instagram.com/tntgarage.maadi/" className="social-link">
               <FontAwesomeIcon icon={faInstagram} />
+            </a>
+            <a href="https://www.tiktok.com/@tntgarage.maadi" className="social-link">
+              <FontAwesomeIcon icon={faTiktok} />
             </a>
           </div>
         </div>
@@ -47,16 +50,16 @@ const Footer = () => {
           <h4>معلومات الاتصال</h4>
           <div className="contact-info">
             <p>📍 الرياض, المملكة العربية السعودية</p>
-            <p>📞 +966 555 123-4567</p>
+            <p>📞 01111132621</p>
             <p>📧 info@tntgarage.com</p>
-            <p>🕒 الأحد - الخميس: 8:00 - 17:00</p>
+            <p>🕒 السبت - الخميس: 8:00 - 17:00</p>
           </div>
         </div>
       </div>
 
       <div className="footer-bottom">
         <div className="footer-bottom-content">
-          <p>&copy; 2024 TNT Garage. All rights reserved. Powered By <a href="https://emereld-marketing.online" target="_blank" rel="noopener noreferrer" style={{color: "white", textDecoration: "none"}}>EMERELD</a></p>
+          <p>&copy; 2024 TNT Garage. All rights reserved. Powered By <a href="https://emereld-marketing.online" target="_blank" rel="noopener noreferrer" style={{ color: "white", textDecoration: "none" }}>EMERELD</a></p>
         </div>
       </div>
     </footer>
