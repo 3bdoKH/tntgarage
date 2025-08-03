@@ -135,14 +135,14 @@
     padding: 40px 0 20px;
   }
 
+  .footer-section {
+    text-align: center;
+  }
+
   .footer-container {
     grid-template-columns: 1fr;
     gap: 30px;
     padding: 0 15px;
-  }
-
-  .footer-logo {
-    height: 50px;
   }
 
   .footer-bottom-content {
@@ -163,10 +163,6 @@
 
   .footer-section h4 {
     font-size: 1.1rem;
-  }
-
-  .footer-logo {
-    height: 45px;
   }
 
   .social-links {

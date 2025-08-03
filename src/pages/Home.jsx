@@ -6,7 +6,7 @@ import UsedParts from "../components/usedParts";
 import Form from "../components/Form";
 import BMW from "../components/BMW";
 import VW from "../components/VW";
-
+import CheckForm from "../components/CheckForm";
 
 const cars = [
   {
@@ -273,6 +273,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <CheckForm />
       </div>
 
       <div className="features-section">
