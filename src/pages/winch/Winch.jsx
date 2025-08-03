@@ -160,7 +160,8 @@ const Winch = () => {
 
       <div className="features-section">
         <div className="container">
-          <h2 className="section-title"> tnt garage مميزات ونش الانقاذ من</h2>
+          <img src={require('../../logo-tr.png')} alt="TNT Garage Logo" className="winch-logo" />
+          <h2 className="section-title"> <span className='tnt-span'>tnt garage </span>مميزات ونش الانقاذ </h2>
           <div className="features-grid">
             <div className="feature-item">
               <h3>🏆 نحن اسرع ونش انقاذ</h3>

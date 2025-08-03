@@ -146,7 +146,7 @@ const Home = () => {
           <div className="interactive-bar">
             <div className="gradient-circle"></div>
             <div className="gradient-fill"></div>
-            <button className="order-btn" onClick={() => window.location.href = '#form'}>احجز الآن</button>
+            <button className="order-btn" onClick={() => window.location.href = '#form'}>حجز صيانه</button>
           </div>
           <div className="featured-car">
             <img

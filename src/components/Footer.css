@@ -15,11 +15,10 @@
 }
 
 .footer-logo {
-  height: 60px;
+  height: 100px;
   width: auto;
   object-fit: contain;
   margin-bottom: 20px;
-  filter: brightness(0) invert(1);
   transition: transform 0.3s ease;
 }
 
@@ -135,23 +134,23 @@
   .footer {
     padding: 40px 0 20px;
   }
-  
+
   .footer-container {
     grid-template-columns: 1fr;
     gap: 30px;
     padding: 0 15px;
   }
-  
+
   .footer-logo {
     height: 50px;
   }
-  
+
   .footer-bottom-content {
     flex-direction: column;
     text-align: center;
     padding: 0 15px;
   }
-  
+
   .footer-bottom-links {
     justify-content: center;
   }
@@ -161,16 +160,16 @@
   .footer-section h3 {
     font-size: 1.3rem;
   }
-  
+
   .footer-section h4 {
     font-size: 1.1rem;
   }
-  
+
   .footer-logo {
     height: 45px;
   }
-  
+
   .social-links {
     justify-content: center;
   }
-} 
+}

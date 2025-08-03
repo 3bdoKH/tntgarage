@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section">
-          <img src={require('../logo.png')} alt="TNT Garage Logo" className="footer-logo" />
+          <img src={require('../logo-tr.png')} alt="TNT Garage Logo" className="footer-logo" />
           <p>Your trusted source for quality car spare parts and automotive solutions.</p>
           <div className="social-links">
             <a href="https://wa.me/+201111132621" target="_blank" rel="noopener noreferrer" className="social-link">
@@ -52,7 +52,7 @@ const Footer = () => {
             <p>📍طريق الأوتوستراد – بجوار بنزينة أدنوك – أمام كمبوند أبراج المستقبل – مدخل رقم 2 – دجلة المعادي </p>
             <p>📞 01111132621</p>
             <p>📧 info@tntgarage.com</p>
-            <p>🕒 كل ايام الاسبوع ما عدا الاحد</p>
+            <p>🕒 كل ايام الاسبوع </p>
           </div>
         </div>
       </div>

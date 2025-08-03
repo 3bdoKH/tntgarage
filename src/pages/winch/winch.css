@@ -156,6 +156,22 @@
     margin: 0 auto;
 }
 
+.container {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .section-title .tnt-span {
+        display: none;
+    }
+}
+
+.winch-logo {
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
 .section-title {
     text-align: center;
     font-size: 3rem;
