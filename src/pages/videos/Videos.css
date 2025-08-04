@@ -350,32 +350,6 @@
     font-size: 0.9rem;
 }
 
-.contact-section {
-    text-align: center;
-    padding: 60px 20px;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 20px;
-    margin-top: 40px;
-    backdrop-filter: blur(10px);
-}
-
-.contact-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    background: linear-gradient(45deg, #e74c3c, #c0392b);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.contact-section p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    opacity: 0.9;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 .contact-buttons {
     display: flex;
@@ -447,14 +421,6 @@
 
     .video-info h3 {
         font-size: 1.1rem;
-    }
-
-    .contact-section h2 {
-        font-size: 2rem;
-    }
-
-    .contact-section p {
-        font-size: 1rem;
     }
 
     .contact-buttons {

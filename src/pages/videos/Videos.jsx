@@ -279,15 +279,6 @@ const Videos = () => {
                     </div>
                 </div>
             )}
-
-            <div className="contact-section">
-                <h2>هل تريد إضافة فيديو؟</h2>
-                <p>تواصل معنا لإضافة فيديوهات جديدة عن السيارات وقطع الغيار</p>
-                <div className="contact-buttons">
-                    <button className="primary-btn">اتصل بنا</button>
-                    <button className="secondary-btn">راسلنا على واتساب</button>
-                </div>
-            </div>
         </div>
     );
 };

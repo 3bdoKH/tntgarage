@@ -259,6 +259,19 @@
     transform: scale(1.05);
 }
 
+.whatsapp-icon {
+    margin-left: 8px;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
 .whatsapp-btn {
     background: linear-gradient(45deg, #25d366, #128c7e);
     color: white;

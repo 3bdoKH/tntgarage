@@ -48,7 +48,7 @@ const Winch = () => {
         <div className="container">
           <div className="aman-content">
             <div className="aman-image">
-              <img src={require('./aman.jpg')} alt="Aman Winch" />
+              <img src={require('./aman.jpeg')} alt="Aman Winch" />
             </div>
             <div className="aman-text">
               <h2 className="aman-title">ونش انقاذ معتمد وسريع</h2>
@@ -123,7 +123,7 @@ const Winch = () => {
               <div className="contact-details">
                 <h3>المنطقة</h3>
                 <p>جميع أنحاء الجمهورية</p>
-                <p>الطرق السريعة والصحراوية</p>
+                <p>سواء الطرق السريعه أو الطريق الصحراوي</p>
               </div>
             </div>
           </div>

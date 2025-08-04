@@ -53,49 +53,49 @@ const VwGroup = () => {
                     <div className="brands-grid">
                         <div className="brand-card">
                             <div className="brand-image">
-                                <img src={require('../../volks-front.png')} alt="Volkswagen" />
+                                <img src={require('../../volks-side.png')} alt="Volkswagen" />
                             </div>
                             <h3>ڤولكس</h3>
                             <p>صيانة شاملة لجميع موديلات فولكس واجن</p>
                         </div>
                         <div className="brand-card">
                             <div className="brand-image">
-                                <img src={require('../../audi-front.png')} alt="Audi" />
+                                <img src={require('../../audi-side.png')} alt="Audi" />
                             </div>
                             <h3>اودي</h3>
                             <p>خدمة صيانة احترافية لسيارات أودي</p>
                         </div>
                         <div className="brand-card">
                             <div className="brand-image">
-                                <img src={require('../../skoda-front.png')} alt="Skoda" />
+                                <img src={require('../../skoda-side.png')} alt="Skoda" />
                             </div>
                             <h3>سكودا</h3>
                             <p>صيانة وتشخيص شامل لسيارات سكودا</p>
                         </div>
                         <div className="brand-card">
                             <div className="brand-image">
-                                <img src={require('../../seat-front.png')} alt="Seat" />
+                                <img src={require('../../seat-side.png')} alt="Seat" />
                             </div>
                             <h3>سيات</h3>
                             <p>خدمات صيانة متخصصة لسيارات سيات</p>
                         </div>
                         <div className="brand-card">
                             <div className="brand-image">
-                                <img src={require('../../porsche-front.png')} alt="Porsche" />
+                                <img src={require('../../porsche-side.png')} alt="Porsche" />
                             </div>
                             <h3>بورش</h3>
                             <p>صيانة فاخرة لسيارات بورش الرياضية</p>
                         </div>
                         <div className="brand-card">
                             <div className="brand-image">
-                                <img src={require('../../hero.png')} alt="Lamborghini" />
+                                <img src={require('../../lambo-side.png')} alt="Lamborghini" />
                             </div>
                             <h3>لامبورجيني</h3>
                             <p>خدمة صيانة استثنائية للسيارات الفاخرة</p>
                         </div>
                         <div className="brand-card">
                             <div className="brand-image">
-                                <img src={require('../../bently-front.png')} alt="Bentley" />
+                                <img src={require('../../bently-side.png')} alt="Bentley" />
                             </div>
                             <h3>بينتلي</h3>
                             <p>صيانة فاخرة لسيارات بنتلي الفاخرة</p>

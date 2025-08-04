@@ -62,7 +62,7 @@ const cars = [
   {
     name: "Lamborghini",
     featured: "lambo-side",
-    showcase: "hero",
+    showcase: "lambo-front",
     specs: {
       model: "2024",
       quality: "100%",
@@ -144,9 +144,9 @@ const Home = () => {
             <img src={require('../logo-tr.png')} alt="TNT Garage Logo" className="brand-logo" />
           </div>
           <div className="interactive-bar">
-            <div className="gradient-circle"></div>
-            <div className="gradient-fill"></div>
             <button className="order-btn" onClick={() => window.location.href = '#form'}>حجز صيانه</button>
+            <div className="gradient-circle"></div>
+            <button className="order-btn" onClick={() => window.location.href = '#inspection'}>فحص السيارات</button>
           </div>
           <div className="featured-car">
             <img
@@ -231,7 +231,19 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="inspection-section">
+
+      <Form />
+      <div className="features-section">
+        <div className="container">
+          <h2>Services</h2>
+          <Winch />
+          <div className="parts-container">
+            <NewParts />
+            <UsedParts />
+          </div>
+        </div>
+      </div>
+      <div className="inspection-section" id="inspection">
         <div className="container">
           <div className="inspection-content">
             <div className="inspection-header">
@@ -275,18 +287,6 @@ const Home = () => {
         </div>
         <CheckForm />
       </div>
-
-      <div className="features-section">
-        <div className="container">
-          <h2>Services</h2>
-          <Winch />
-          <div className="parts-container">
-            <NewParts />
-            <UsedParts />
-          </div>
-        </div>
-      </div>
-      <Form />
     </div>
   );
 };

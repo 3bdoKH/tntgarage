@@ -53,21 +53,21 @@ const BmwGroup = () => {
                     <div className="brands-grid">
                         <div className="brand-card">
                             <div className="brand-image">
-                                <img src={require('../../bmw-front.png')} alt="BMW" />
+                                <img src={require('../../bmw-side.png')} alt="BMW" />
                             </div>
                             <h3>بي ام دبليو</h3>
                             <p>صيانة شاملة لجميع موديلات بي ام دبليو الفاخرة</p>
                         </div>
                         <div className="brand-card">
                             <div className="brand-image">
-                                <img src={require('../../mini-front.png')} alt="Mini" />
+                                <img src={require('../../mini-side.png')} alt="Mini" />
                             </div>
                             <h3>ميني</h3>
                             <p>خدمة صيانة احترافية لسيارات ميني الرياضية</p>
                         </div>
                         <div className="brand-card">
                             <div className="brand-image">
-                                <img src={require('../../rolls-front.png')} alt="Rolls-Royce" />
+                                <img src={require('../../rolls-side.png')} alt="Rolls-Royce" />
                             </div>
                             <h3>رولز رويس</h3>
                             <p>صيانة فاخرة لسيارات رولز رويس الفاخرة</p>

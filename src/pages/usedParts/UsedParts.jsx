@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import './UsedParts.css';
 
 const UsedParts = () => {
@@ -65,6 +67,13 @@ const UsedParts = () => {
 
     const clearSearch = () => {
         setSearchTerm('');
+    };
+
+    const handleWhatsAppContact = (partName) => {
+        const phoneNumber = '+201111132621'; // Replace with your actual WhatsApp number
+        const message = `مرحبا، أنا مهتم بشراء ${partName} من قطع الغيار الاستيراد. هل يمكنني الحصول على مزيد من المعلومات؟`;
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
     };
 
     if (loading) {
@@ -155,8 +164,13 @@ const UsedParts = () => {
                                     <span className="discount-badge">خصم</span>
                                 </div>
                                 <div className="part-actions">
-                                    <button className="contact-btn">تواصل معنا</button>
-                                    <button className="whatsapp-btn">واتساب</button>
+                                    <button
+                                        className="contact-btn"
+                                        onClick={() => handleWhatsAppContact(part.name)}
+                                    >
+                                        <FontAwesomeIcon icon={faWhatsapp} className="whatsapp-icon" />
+                                        شراء الان عبر الواتساب
+                                    </button>
                                 </div>
                             </div>
                         </div>

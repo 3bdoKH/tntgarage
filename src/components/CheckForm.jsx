@@ -6,7 +6,6 @@ const CheckForm = () => {
         name: '',
         contactNumber: '',
         carType: '',
-        carBrand: '',
         carModel: '',
         year: '',
         transmission: '',
@@ -35,7 +34,6 @@ const CheckForm = () => {
                         
                         بيانات السيارة:
                         نوع السيارة: ${formData.carType}
-                        ماركة السيارة: ${formData.carBrand}
                         موديل السيارة: ${formData.carModel}
                         سنة الصنع: ${formData.year}
                         نوع ناقل الحركة: ${formData.transmission}
@@ -58,7 +56,6 @@ const CheckForm = () => {
             name: '',
             contactNumber: '',
             carType: '',
-            carBrand: '',
             carModel: '',
             year: '',
             transmission: '',
@@ -114,20 +111,6 @@ const CheckForm = () => {
                                 value={formData.carType}
                                 onChange={handleChange}
                                 placeholder="أدخل نوع السيارة"
-                                required
-                            />
-                        </div>
-                    </div>
-
-                    <div className="check-form-group">
-                        <label>ماركة السيارة</label>
-                        <div className="check-input-wrapper">
-                            <input
-                                type="text"
-                                name="carBrand"
-                                value={formData.carBrand}
-                                onChange={handleChange}
-                                placeholder="أدخل ماركة السيارة"
                                 required
                             />
                         </div>

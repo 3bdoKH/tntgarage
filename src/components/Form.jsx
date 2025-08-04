@@ -6,7 +6,6 @@ const Form = () => {
         name: '',
         contactNumber: '',
         carType: '',
-        carBrand: '',
         carModel: '',
         year: '',
         transmission: ''
@@ -31,7 +30,6 @@ const Form = () => {
                         
                         بيانات السيارة :
                         نوع السيارة : ${formData.carType}
-                        ماركة السيارة : ${formData.carBrand}
                         موديل السيارة : ${formData.carModel}
                         سنة الصنع : ${formData.year}
                         نوع ناقل الحركة : ${formData.transmission}
@@ -48,7 +46,6 @@ const Form = () => {
             name: '',
             contactNumber: '',
             carType: '',
-            carBrand: '',
             carModel: '',
             year: '',
             transmission: ''
@@ -103,20 +100,6 @@ const Form = () => {
                                 value={formData.carType}
                                 onChange={handleChange}
                                 placeholder="أدخل نوع السيارة"
-                                required
-                            />
-                        </div>
-                    </div>
-
-                    <div className="form-group">
-                        <label>إختر ماركة السيارة</label>
-                        <div className="input-wrapper">
-                            <input
-                                type="text"
-                                name="carBrand"
-                                value={formData.carBrand}
-                                onChange={handleChange}
-                                placeholder="أدخل ماركة السيارة"
                                 required
                             />
                         </div>
