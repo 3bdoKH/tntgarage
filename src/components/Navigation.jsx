@@ -40,14 +40,14 @@ const Navigation = () => {
             className={`nav-link ${isActive("/new-parts") ? "active" : ""}`}
             onClick={closeMenu}
           >
-            قطع جديدة
+            قطع غيار جديدة
           </Link>
           <Link
             to="/used-parts"
             className={`nav-link ${isActive("/used-parts") ? "active" : ""}`}
             onClick={closeMenu}
           >
-            قطع استيراد
+            قطع غيار استيراد
           </Link>
           <Link
             to="/winch"
