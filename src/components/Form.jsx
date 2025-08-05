@@ -8,6 +8,7 @@ const Form = () => {
         carType: '',
         carModel: '',
         year: '',
+        inspectionType: '',
         transmission: ''
     })
 
@@ -33,6 +34,7 @@ const Form = () => {
                         موديل السيارة : ${formData.carModel}
                         سنة الصنع : ${formData.year}
                         نوع ناقل الحركة : ${formData.transmission}
+                        نوع الصيانه المطلوب : ${formData.inspectionType}
 
                         شكراً لكم`
 
@@ -48,6 +50,7 @@ const Form = () => {
             carType: '',
             carModel: '',
             year: '',
+            inspectionType: '',
             transmission: ''
         })
     }
@@ -130,6 +133,21 @@ const Form = () => {
                                 placeholder="أدخل سنة الصنع"
                                 required
                             />
+                        </div>
+                    </div>
+
+                    <div className="form-group">
+                        <label>نوع الصيانه المطلوب</label>
+                        <div className="input-wrapper">
+                            <select name="inspectionType" value={formData.inspectionType} onChange={handleChange} required>
+                                <option value="">اختر نوع الصيانه</option>
+                                <option value="general">صيانه عامه</option>
+                                <option value="engine">صيانه المحرك</option>
+                                <option value="brakes">صيانه الفرامل</option>
+                                <option value="electrical">صيانه الكهرباء</option>
+                                <option value="suspension">صيانه التعليق</option>
+                                <option value="diagnostic">صيانه تشخيصيه</option>
+                            </select>
                         </div>
                     </div>
 

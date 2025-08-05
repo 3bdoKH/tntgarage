@@ -9,10 +9,8 @@ const CheckForm = () => {
         carModel: '',
         year: '',
         transmission: '',
-        inspectionType: '',
         currentMileage: '',
         lastServiceDate: '',
-        issues: ''
     })
 
     const handleChange = (e) => {
@@ -39,10 +37,8 @@ const CheckForm = () => {
                         نوع ناقل الحركة: ${formData.transmission}
                         
                         معلومات الفحص:
-                        نوع الفحص المطلوب: ${formData.inspectionType}
                         عدد الكيلومترات الحالي: ${formData.currentMileage}
                         تاريخ آخر صيانة: ${formData.lastServiceDate}
-                        المشاكل الحالية: ${formData.issues}
 
                         شكراً لكم`
 
@@ -59,10 +55,8 @@ const CheckForm = () => {
             carModel: '',
             year: '',
             transmission: '',
-            inspectionType: '',
             currentMileage: '',
             lastServiceDate: '',
-            issues: ''
         })
     }
 
@@ -73,9 +67,9 @@ const CheckForm = () => {
                 <form className="inspection-form" onSubmit={handleSubmit}>
                     <h1 className="check-form-title">حجز موعد فحص السيارة</h1>
 
-                    <div className="check-form-group">
+                    <div className="form-group">
                         <label>الاسم الكامل</label>
-                        <div className="check-input-wrapper">
+                        <div className="input-wrapper">
                             <input
                                 type="text"
                                 name="name"
@@ -87,9 +81,9 @@ const CheckForm = () => {
                         </div>
                     </div>
 
-                    <div className="check-form-group">
+                    <div className="form-group">
                         <label>رقم الهاتف</label>
-                        <div className="check-input-wrapper">
+                        <div className="input-wrapper">
                             <input
                                 type="tel"
                                 name="contactNumber"
@@ -102,9 +96,9 @@ const CheckForm = () => {
                         </div>
                     </div>
 
-                    <div className="check-form-group">
+                    <div className="form-group">
                         <label>نوع السيارة</label>
-                        <div className="check-input-wrapper">
+                        <div className="input-wrapper">
                             <input
                                 type="text"
                                 name="carType"
@@ -116,9 +110,9 @@ const CheckForm = () => {
                         </div>
                     </div>
 
-                    <div className="check-form-group">
+                    <div className="form-group">
                         <label>موديل السيارة</label>
-                        <div className="check-input-wrapper">
+                        <div className="input-wrapper">
                             <input
                                 type="text"
                                 name="carModel"
@@ -130,9 +124,9 @@ const CheckForm = () => {
                         </div>
                     </div>
 
-                    <div className="check-form-group">
+                    <div className="form-group">
                         <label>سنة الصنع</label>
-                        <div className="check-input-wrapper">
+                        <div className="input-wrapper">
                             <input
                                 type="text"
                                 name="year"
@@ -144,9 +138,9 @@ const CheckForm = () => {
                         </div>
                     </div>
 
-                    <div className="check-form-group">
+                    <div className="form-group">
                         <label>نوع ناقل الحركة</label>
-                        <div className="check-input-wrapper">
+                        <div className="input-wrapper">
                             <select name="transmission" value={formData.transmission} onChange={handleChange} required>
                                 <option value="">اختر نوع ناقل الحركة</option>
                                 <option value="automatic">اوتوماتيك</option>
@@ -155,24 +149,9 @@ const CheckForm = () => {
                         </div>
                     </div>
 
-                    <div className="check-form-group">
-                        <label>نوع الفحص المطلوب</label>
-                        <div className="check-input-wrapper">
-                            <select name="inspectionType" value={formData.inspectionType} onChange={handleChange} required>
-                                <option value="">اختر نوع الفحص</option>
-                                <option value="general">فحص عام شامل</option>
-                                <option value="engine">فحص المحرك</option>
-                                <option value="brakes">فحص الفرامل</option>
-                                <option value="electrical">فحص الكهرباء</option>
-                                <option value="suspension">فحص التعليق</option>
-                                <option value="diagnostic">فحص تشخيصي</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div className="check-form-group">
+                    <div className="form-group">
                         <label>عدد الكيلومترات الحالي</label>
-                        <div className="check-input-wrapper">
+                        <div className="input-wrapper">
                             <input
                                 type="text"
                                 name="currentMileage"
@@ -184,28 +163,15 @@ const CheckForm = () => {
                         </div>
                     </div>
 
-                    <div className="check-form-group">
+                    <div className="form-group">
                         <label>تاريخ آخر صيانة</label>
-                        <div className="check-input-wrapper">
+                        <div className="input-wrapper">
                             <input
                                 type="date"
                                 name="lastServiceDate"
                                 value={formData.lastServiceDate}
                                 onChange={handleChange}
                                 required
-                            />
-                        </div>
-                    </div>
-
-                    <div className="check-form-group">
-                        <label>المشاكل الحالية (اختياري)</label>
-                        <div className="check-input-wrapper">
-                            <textarea
-                                name="issues"
-                                value={formData.issues}
-                                onChange={handleChange}
-                                placeholder="اشرح المشاكل التي تواجهها مع السيارة"
-                                rows="3"
                             />
                         </div>
                     </div>
