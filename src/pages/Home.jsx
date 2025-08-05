@@ -162,20 +162,6 @@ const Home = () => {
                 {currentCar.name}
               </h3>
             </div>
-            <div className="specs-box">
-              <div className="spec-item">
-                <span className="spec-label">Model</span>
-                <span className="spec-value">{"2025"}</span>
-              </div>
-              <div className="spec-item">
-                <span className="spec-label">Quality</span>
-                <span className="spec-value">{currentCar.specs?.quality || "100%"}</span>
-              </div>
-              <div className="spec-item">
-                <span className="spec-label">Service</span>
-                <span className="spec-value">{currentCar.specs?.service || "24/7"}</span>
-              </div>
-            </div>
           </div>
         </div>
         <div className="upper-showcase">

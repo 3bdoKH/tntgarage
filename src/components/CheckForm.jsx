@@ -10,7 +10,6 @@ const CheckForm = () => {
         year: '',
         transmission: '',
         currentMileage: '',
-        lastServiceDate: '',
     })
 
     const handleChange = (e) => {
@@ -38,7 +37,6 @@ const CheckForm = () => {
                         
                         معلومات الفحص:
                         عدد الكيلومترات الحالي: ${formData.currentMileage}
-                        تاريخ آخر صيانة: ${formData.lastServiceDate}
 
                         شكراً لكم`
 
@@ -56,7 +54,6 @@ const CheckForm = () => {
             year: '',
             transmission: '',
             currentMileage: '',
-            lastServiceDate: '',
         })
     }
 
@@ -158,19 +155,6 @@ const CheckForm = () => {
                                 value={formData.currentMileage}
                                 onChange={handleChange}
                                 placeholder="أدخل عدد الكيلومترات"
-                                required
-                            />
-                        </div>
-                    </div>
-
-                    <div className="form-group">
-                        <label>تاريخ آخر صيانة</label>
-                        <div className="input-wrapper">
-                            <input
-                                type="date"
-                                name="lastServiceDate"
-                                value={formData.lastServiceDate}
-                                onChange={handleChange}
                                 required
                             />
                         </div>
