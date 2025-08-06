@@ -145,7 +145,8 @@ const Home = () => {
           </div>
           <div className="interactive-bar">
             <button className="order-btn" onClick={() => window.location.href = '#form'}>حجز صيانه</button>
-            <div className="gradient-circle"></div>
+            <button className="order-btn" onClick={() => window.location.href = '/new-parts'}>قطع غيار جديده</button>
+            <button className="order-btn" onClick={() => window.location.href = '/used-parts'}>قطع غيار مستعمله</button>
             <button className="order-btn" onClick={() => window.location.href = '#inspection'}>فحص السيارات</button>
           </div>
           <div className="featured-car">
