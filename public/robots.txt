@@ -1,3 +1,22 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+
+# Block development files
+Disallow: /static/js/
+Disallow: /static/css/
+
+# Allow important pages
+Allow: /new-parts
+Allow: /used-parts
+Allow: /videos
+Allow: /winch
+Allow: /bmw-group
+Allow: /vw-group
+
+# Sitemap location
+Sitemap: https://tntgarage.com/sitemap.xml
+
+# Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1

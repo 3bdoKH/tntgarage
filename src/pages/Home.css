@@ -196,7 +196,7 @@
 
 @media (max-width: 768px) {
   .featured-car-image {
-    height: fit-content;
+    height: 200px;
   }
 }
 
