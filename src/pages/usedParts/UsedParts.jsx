@@ -151,12 +151,21 @@ const UsedParts = () => {
                 <div className="parts-grid">
                     {filteredParts.map((part) => (
                         <div key={part._id} className="part-card">
-                            <div className="part-image-used">
+                            <div
+                                className="part-image-used"
+                                onClick={() => navigate(`/product/${part._id}`)}
+                                style={{ cursor: 'pointer' }}
+                            >
                                 <img src={part.imageUrl} alt={part.name} />
                                 <div className="status-badge used">مستعمل</div>
                             </div>
                             <div className="part-info">
-                                <h3>{part.name}</h3>
+                                <h3
+                                    onClick={() => navigate(`/product/${part._id}`)}
+                                    style={{ cursor: 'pointer' }}
+                                >
+                                    {part.name}
+                                </h3>
                                 <p className="brand-model">{part.brand} - {part.model}</p>
                                 <p className="description">{part.description}</p>
                                 <div className="price-section">
@@ -164,6 +173,12 @@ const UsedParts = () => {
                                     <span className="discount-badge">خصم</span>
                                 </div>
                                 <div className="part-actions">
+                                    <button
+                                        className="details-btn"
+                                        onClick={() => navigate(`/product/${part._id}`)}
+                                    >
+                                        عرض التفاصيل
+                                    </button>
                                     <button
                                         className="contact-btn"
                                         onClick={() => handleWhatsAppContact(part.name)}

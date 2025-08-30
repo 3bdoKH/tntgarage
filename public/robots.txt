@@ -16,7 +16,7 @@ Allow: /bmw-group
 Allow: /vw-group
 
 # Sitemap location
-Sitemap: https://tntgarage.com/sitemap.xml
+Sitemap: https://tntgaragede.com/sitemap.xml
 
 # Crawl delay (optional - helps prevent server overload)
 Crawl-delay: 1

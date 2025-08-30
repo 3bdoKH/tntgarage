@@ -6,6 +6,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import NewParts from "./pages/newParts/NewParts";
 import UsedParts from "./pages/usedParts/UsedParts";
+import ProductDetails from "./pages/productDetails/ProductDetails";
 import Videos from "./pages/videos/Videos";
 import Winch from "./pages/winch/Winch";
 import BmwGroup from "./pages/bmwGroup/BmwGroup";
@@ -28,6 +29,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/new-parts" element={<NewParts />} />
             <Route path="/used-parts" element={<UsedParts />} />
+            <Route path="/product/:id" element={<ProductDetails />} />
             <Route path="/videos" element={<Videos />} />
             <Route path="/winch" element={<Winch />} />
             <Route path="/bmw-group" element={<BmwGroup />} />

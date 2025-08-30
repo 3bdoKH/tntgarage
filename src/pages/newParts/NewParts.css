@@ -211,7 +211,8 @@
 }
 
 .contact-btn,
-.whatsapp-btn {
+.whatsapp-btn,
+.details-btn {
     flex: 1;
     padding: 12px 20px;
     border: none;
@@ -252,6 +253,16 @@
 
 .whatsapp-btn:hover {
     background: linear-gradient(45deg, #128c7e, #075e54);
+    transform: scale(1.05);
+}
+
+.details-btn {
+    background: linear-gradient(45deg, #6c757d, #495057);
+    color: white;
+}
+
+.details-btn:hover {
+    background: linear-gradient(45deg, #495057, #343a40);
     transform: scale(1.05);
 }
 
@@ -404,7 +415,8 @@
     }
 
     .contact-btn,
-    .whatsapp-btn {
+    .whatsapp-btn,
+    .details-btn {
         width: 100%;
     }
 
