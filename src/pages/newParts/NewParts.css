@@ -208,6 +208,12 @@
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.action-buttons-row {
+    display: flex;
+    gap: 10px;
 }
 
 .contact-btn,
@@ -264,6 +270,31 @@
 .details-btn:hover {
     background: linear-gradient(45deg, #495057, #343a40);
     transform: scale(1.05);
+}
+
+.share-btn {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.share-btn:hover {
+    background: linear-gradient(45deg, #0056b3, #004085);
+    transform: scale(1.05);
+}
+
+.share-icon {
+    font-size: 1.1em;
 }
 
 .contact-section {
@@ -414,8 +445,13 @@
         flex-direction: column;
     }
 
+    .action-buttons-row {
+        flex-direction: column;
+    }
+
     .contact-btn,
     .whatsapp-btn,
+    .share-btn,
     .details-btn {
         width: 100%;
     }
@@ -510,4 +546,35 @@
 .clear-all-btn:hover {
     background: linear-gradient(45deg, #0056b3, #004085);
     transform: scale(1.05);
+}
+
+/* Load More Button Styles */
+.load-more-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 40px;
+}
+
+.load-more-btn {
+    background: linear-gradient(45deg, #007bff, #00d4ff);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+    font-family: 'Cairo', sans-serif;
+}
+
+.load-more-btn:hover {
+    background: linear-gradient(45deg, #0056b3, #004085);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+}
+
+.load-more-btn:active {
+    transform: translateY(1px);
 }

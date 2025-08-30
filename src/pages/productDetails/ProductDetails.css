@@ -193,6 +193,9 @@
 
 .product-actions {
     margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .contact-btn {
@@ -217,6 +220,32 @@
 }
 
 .whatsapp-icon {
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+.share-btn {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.share-btn:hover {
+    background-color: #5a6268;
+}
+
+.share-icon {
     margin-left: 10px;
     font-size: 1.2rem;
 }

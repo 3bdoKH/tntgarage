@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { FiShare2 } from 'react-icons/fi';
 import './ProductDetails.css';
 
 const ProductDetails = () => {
@@ -43,12 +44,46 @@ const ProductDetails = () => {
 
     const handleWhatsAppContact = () => {
         if (!part) return;
-        
+
         const phoneNumber = '+201111132621'; // Replace with your actual WhatsApp number
         const status = part.status === 'new' ? 'الجديدة' : 'الاستيراد';
         const message = `مرحبا، أنا مهتم بشراء ${part.name} من قطع الغيار ${status}. هل يمكنني الحصول على مزيد من المعلومات؟`;
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
+    };
+
+    const handleShare = () => {
+        if (!part) return;
+
+        if (navigator.share) {
+            navigator.share({
+                title: part.name,
+                text: `شاهد ${part.name} - ${part.brand} ${part.model} - ${part.status === 'new' ? 'قطع غيار جديدة' : 'قطع غيار استيراد'}`,
+                url: window.location.href,
+            });
+        } else {
+            navigator.clipboard.writeText(window.location.href);
+
+            // Show toast notification
+            const toast = document.createElement('div');
+            toast.textContent = 'تم نسخ الرابط إلى الحافظة';
+            toast.style.position = 'fixed';
+            toast.style.bottom = '20px';
+            toast.style.left = '50%';
+            toast.style.transform = 'translateX(-50%)';
+            toast.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+            toast.style.color = 'white';
+            toast.style.padding = '10px 20px';
+            toast.style.borderRadius = '5px';
+            toast.style.zIndex = '1000';
+            toast.style.fontFamily = 'Cairo, sans-serif';
+
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                document.body.removeChild(toast);
+            }, 3000);
+        }
     };
 
     if (loading) {
@@ -80,7 +115,7 @@ const ProductDetails = () => {
                 <button onClick={handleBackClick} className="back-btn">
                     ← العودة للخلف
                 </button>
-                <h1>تفاصيل المنتج</h1>
+                <h1 style={{ background: 'linear-gradient(45deg, #007bff, #00d4ff)', backgroundClip: 'text' }}>تفاصيل المنتج</h1>
             </div>
 
             <div className="product-details-container">
@@ -94,7 +129,7 @@ const ProductDetails = () => {
                 <div className="product-info-container">
                     <h2 className="product-name">{part.name}</h2>
                     <p className="product-brand-model">{part.brand} - {part.model}</p>
-                    
+
                     <div className="product-price-section">
                         <span className="product-price">{part.price} جنيه</span>
                         {part.status === 'used' && <span className="discount-badge">خصم</span>}
@@ -122,6 +157,14 @@ const ProductDetails = () => {
                         >
                             <FontAwesomeIcon icon={faWhatsapp} className="whatsapp-icon" />
                             شراء الان عبر الواتساب
+                        </button>
+                        <button
+                            onClick={handleShare}
+                            className="share-btn"
+                            aria-label="مشاركة المنتج"
+                        >
+                            <FiShare2 className="share-icon" />
+                            مشاركة المنتج
                         </button>
                     </div>
                 </div>
