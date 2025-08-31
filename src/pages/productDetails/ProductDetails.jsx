@@ -156,7 +156,7 @@ const ProductDetails = () => {
                             onClick={handleWhatsAppContact}
                         >
                             <FontAwesomeIcon icon={faWhatsapp} className="whatsapp-icon" />
-                            شراء الان عبر الواتساب
+                            شراء عبر الواتساب
                         </button>
                         <button
                             onClick={handleShare}
