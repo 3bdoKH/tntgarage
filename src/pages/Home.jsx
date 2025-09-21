@@ -7,6 +7,7 @@ import Form from "../components/Form";
 import BMW from "../components/BMW";
 import VW from "../components/VW";
 import CheckForm from "../components/CheckForm";
+import SEOHead from "../components/SEOHead";
 
 const cars = [
   {
@@ -138,6 +139,12 @@ const Home = () => {
 
   return (
     <div className="home">
+      <SEOHead
+        title="الرئيسية"
+        description="TNT Garage - متجر قطع غيار السيارات الألمانية في مصر. قطع غيار جديدة ومستعملة لجميع ماركات BMW و Volkswagen Group. خدمة ونش انقاذ 24/7، فحص السيارات، صيانة السيارات الألمانية. توصيل سريع في جميع أنحاء مصر."
+        keywords="قطع غيار سيارات, قطع غيار BMW, قطع غيار أودي, قطع غيار فولكس فاجن, قطع غيار بورش, قطع غيار لامبورغيني, قطع غيار بنتلي, قطع غيار جديدة, قطع غيار مستعملة, قطع غيار استيراد, ونش انقاذ, سحب سيارات, فحص سيارات, صيانة سيارات, TNT Garage, مصر, المعادي, القاهرة"
+        url="https://tntgaragede.com/"
+      />
       <div className="car-showcase">
         <div className="lower-showcase">
           <div className="main-title">

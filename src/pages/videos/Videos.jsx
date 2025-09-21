@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Videos.css';
+import SEOHead from '../../components/SEOHead';
 
 const Videos = () => {
     const [videos, setVideos] = useState([]);
@@ -198,6 +199,12 @@ const Videos = () => {
 
     return (
         <div className="videos-page">
+            <SEOHead
+                title="فيديوهات السيارات"
+                description="شاهد أحدث الفيديوهات عن السيارات الألمانية وقطع الغيار. فيديوهات تعليمية وصيانة السيارات، مراجعات قطع الغيار، نصائح فنية، وأكثر. محتوى عالي الجودة باللغة العربية لمالكي السيارات الألمانية في مصر."
+                keywords="فيديوهات سيارات, فيديوهات BMW, فيديوهات Audi, فيديوهات Volkswagen, فيديوهات Porsche, فيديوهات قطع غيار, صيانة سيارات, نصائح سيارات, مراجعات سيارات, TNT Garage, مصر"
+                url="https://tntgaragede.com/videos"
+            />
             <div className="page-header">
                 <button onClick={handleBackClick} className="back-btn">
                     ← العودة للرئيسية

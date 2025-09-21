@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { FiShare2 } from 'react-icons/fi';
 import './UsedParts.css';
+import SEOHead from '../../components/SEOHead';
 
 const UsedParts = () => {
     const [parts, setParts] = useState([]);
@@ -143,6 +144,12 @@ const UsedParts = () => {
 
     return (
         <div className="used-parts-page">
+            <SEOHead
+                title="قطع الغيار الاستيراد"
+                description="اكتشف مجموعتنا المميزة من قطع الغيار الاستيراد عالية الجودة بأسعار مناسبة لجميع ماركات السيارات الألمانية. قطع غيار BMW، Audi، Volkswagen، Porsche، Lamborghini، Bentley مستعملة. جودة مضمونة وتوصيل سريع في جميع أنحاء مصر."
+                keywords="قطع غيار استيراد, قطع غيار مستعملة, قطع غيار BMW مستعملة, قطع غيار Audi مستعملة, قطع غيار Volkswagen مستعملة, قطع غيار Porsche مستعملة, قطع غيار Lamborghini مستعملة, قطع غيار Bentley مستعملة, قطع غيار ألمانية مستعملة, TNT Garage, مصر"
+                url="https://tntgaragede.com/used-parts"
+            />
             <div className="page-header">
                 <button onClick={handleBackClick} className="back-btn">
                     ← العودة للرئيسية

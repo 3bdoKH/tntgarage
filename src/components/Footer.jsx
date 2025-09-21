@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-section">
           <img src={require('../logo-tr.png')} alt="TNT Garage Logo" className="footer-logo" />
-          <p>Your trusted source for quality car spare parts and automotive solutions.</p>
+          <p>مصدرك الموثوق لقطع غيار السيارات عالية الجودة والحلول السياراتية المتكاملة.</p>
           <div className="social-links">
             <a href="https://wa.me/+201111132621" target="_blank" rel="noopener noreferrer" className="social-link">
               <FontAwesomeIcon icon={faWhatsapp} />
@@ -59,7 +59,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="footer-bottom-content">
-          <p>&copy; 2024 TNT Garage. All rights reserved.</p>
+          <p>&copy; 2024 TNT Garage. جميع الحقوق محفوظة.</p>
         </div>
       </div>
     </footer>

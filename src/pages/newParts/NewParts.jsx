@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { FiShare2 } from 'react-icons/fi';
 import './NewParts.css';
+import SEOHead from '../../components/SEOHead';
 
 const NewParts = () => {
     const [parts, setParts] = useState([]);
@@ -143,6 +144,12 @@ const NewParts = () => {
 
     return (
         <div className="new-parts-page">
+            <SEOHead
+                title="قطع الغيار الجديدة"
+                description="اكتشف مجموعتنا المميزة من قطع الغيار الجديدة عالية الجودة لجميع ماركات السيارات الألمانية. قطع غيار BMW، Audi، Volkswagen، Porsche، Lamborghini، Bentley وأكثر. أسعار مناسبة وتوصيل سريع في جميع أنحاء مصر."
+                keywords="قطع غيار جديدة, قطع غيار BMW جديدة, قطع غيار Audi جديدة, قطع غيار Volkswagen جديدة, قطع غيار Porsche جديدة, قطع غيار Lamborghini جديدة, قطع غيار Bentley جديدة, قطع غيار ألمانية جديدة, TNT Garage, مصر"
+                url="https://tntgaragede.com/new-parts"
+            />
             <div className="page-header">
                 <button onClick={handleBackClick} className="back-btn">
                     ← العودة للرئيسية

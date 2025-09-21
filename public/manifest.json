@@ -1,6 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "TNT Garage",
+  "name": "TNT Garage - قطع غيار السيارات الألمانية وخدمة ونش الانقاذ في مصر",
+  "description": "متجر قطع غيار السيارات الألمانية في مصر. قطع غيار جديدة ومستعملة لجميع ماركات BMW و Volkswagen Group. خدمة ونش انقاذ 24/7، فحص السيارات، صيانة السيارات الألمانية.",
+  "lang": "ar-EG",
+  "dir": "rtl",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,12 +11,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "logotr.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "logotr.png",
       "type": "image/png",
       "sizes": "512x512"
     }
@@ -21,5 +24,16 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "categories": ["automotive", "shopping", "business"],
+  "screenshots": [
+    {
+      "src": "logotr.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
 }

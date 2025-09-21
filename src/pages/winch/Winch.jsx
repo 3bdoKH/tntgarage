@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './winch.css';
 import { useNavigate } from 'react-router-dom';
+import SEOHead from '../../components/SEOHead';
 
 const Winch = () => {
   const navigate = useNavigate();
@@ -21,6 +22,12 @@ const Winch = () => {
 
   return (
     <div className="winch-page">
+      <SEOHead
+        title="ونش انقاذ"
+        description="خدمة ونش انقاذ معتمد وسريع تابع لشركة آمان التابعة لوزارة الداخلية. نصلك أينما كنت خلال 15 دقيقة بحد أقصى. خدمة 24/7 على مدار الساعة لجميع أنحاء الجمهورية. ونش مزود بأجهزة تتبع GPS للأمان التام."
+        keywords="ونش انقاذ, سحب سيارات, انقاذ سيارات, ونش معتمد, ونش سريع, ونش آمان, وزارة الداخلية, ونش 24 ساعة, ونش مصر, TNT Garage, ونش المعادي, ونش القاهرة"
+        url="https://tntgaragede.com/winch"
+      />
       <div className="winch-hero">
         <div className="hero-content">
           <h1 className="hero-title">ونش انقاذ</h1>
