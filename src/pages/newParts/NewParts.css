@@ -341,6 +341,7 @@
     font-weight: 600;
     transition: all 0.3s ease;
     min-width: 180px;
+    text-decoration: none;
 }
 
 .primary-btn {

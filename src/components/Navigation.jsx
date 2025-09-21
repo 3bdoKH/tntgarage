@@ -63,6 +63,13 @@ const Navigation = () => {
           >
             فيديوهات
           </Link>
+          <Link
+            to="/articles"
+            className={`nav-link ${isActive("/articles") ? "active" : ""}`}
+            onClick={closeMenu}
+          >
+            المقالات
+          </Link>
         </div>
 
         <div className="nav-toggle" onClick={toggleMenu}>

@@ -260,8 +260,8 @@ const NewParts = () => {
                 <h2>هل تحتاج مساعدة؟</h2>
                 <p>تواصل معنا للحصول على استشارة مجانية حول قطع الغيار المناسبة لسيارتك</p>
                 <div className="contact-buttons">
-                    <button className="primary-btn">اتصل بنا</button>
-                    <button className="secondary-btn">راسلنا على واتساب</button>
+                    <a className="primary-btn" href='tel:01111132621'>اتصل بنا</a>
+                    <a className="secondary-btn" href='https://wa.me/201111132621' target='_blank' rel='noopener noreferrer'>راسلنا على واتساب</a>
                 </div>
             </div>
         </div>

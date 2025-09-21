@@ -59,7 +59,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="footer-bottom-content">
-          <p>&copy; 2024 TNT Garage. All rights reserved. Powered By <a href="https://emereld-marketing.online" target="_blank" rel="noopener noreferrer" style={{ color: "white", textDecoration: "none" }}>EMERELD</a></p>
+          <p>&copy; 2024 TNT Garage. All rights reserved.</p>
         </div>
       </div>
     </footer>

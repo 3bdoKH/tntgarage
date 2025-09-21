@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './AdminDashboard.css';
 import { useNavigate } from 'react-router-dom';
+import { articlesAPI } from '../../utils/api';
 
 const AdminDashboard = () => {
     const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState('parts');
     const [parts, setParts] = useState([]);
     const [videos, setVideos] = useState([]);
+    const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const [adminUser, setAdminUser] = useState('');
@@ -30,6 +32,22 @@ const AdminDashboard = () => {
     });
     const [editingVideo, setEditingVideo] = useState(null);
 
+    // Form states for articles
+    const [articleForm, setArticleForm] = useState({
+        title: '',
+        description: '',
+        imageUrl: '',
+        author: '',
+        published: false,
+        tags: '',
+        sections: []
+    });
+    const [editingArticle, setEditingArticle] = useState(null);
+    const [sectionForm, setSectionForm] = useState({
+        heading: '',
+        paragraph: ''
+    });
+
     const API_BASE_URL = 'https://emereld-marketing.online/api';
 
     useEffect(() => {
@@ -41,6 +59,7 @@ const AdminDashboard = () => {
 
         fetchParts();
         fetchVideos();
+        fetchArticles();
     }, []);
 
     const handleLogout = () => {
@@ -82,6 +101,22 @@ const AdminDashboard = () => {
             }
         } catch (error) {
             setError('Error fetching videos: ' + error.message);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const fetchArticles = async () => {
+        try {
+            setLoading(true);
+            const data = await articlesAPI.getAllArticles();
+            if (data.success) {
+                setArticles(data.data);
+            } else {
+                setError('Failed to fetch articles');
+            }
+        } catch (error) {
+            setError('Error fetching articles: ' + error.message);
         } finally {
             setLoading(false);
         }
@@ -232,11 +267,96 @@ const AdminDashboard = () => {
         }
     };
 
+    // Article handlers
+    const handleArticleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            setLoading(true);
+
+            const articleData = {
+                ...articleForm,
+                tags: articleForm.tags ? articleForm.tags.split(',').map(tag => tag.trim()) : [],
+                sections: articleForm.sections
+            };
+
+            const data = editingArticle
+                ? await articlesAPI.updateArticle(editingArticle._id, articleData)
+                : await articlesAPI.createArticle(articleData);
+
+            if (data.success) {
+                setArticleForm({ title: '', description: '', imageUrl: '', author: '', published: false, tags: '', sections: [] });
+                setEditingArticle(null);
+                fetchArticles();
+                setError('');
+            } else {
+                setError(data.message);
+            }
+        } catch (error) {
+            setError('Error saving article: ' + error.message);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleArticleEdit = (article) => {
+        setEditingArticle(article);
+        setArticleForm({
+            title: article.title,
+            description: article.description,
+            imageUrl: article.imageUrl || '',
+            author: article.author,
+            published: article.published,
+            tags: article.tags ? article.tags.join(', ') : '',
+            sections: article.sections || []
+        });
+    };
+
+    const handleArticleDelete = async (id) => {
+        if (window.confirm('هل أنت متأكد من حذف هذا المقال؟')) {
+            try {
+                setLoading(true);
+                const data = await articlesAPI.deleteArticle(id);
+                if (data.success) {
+                    fetchArticles();
+                    setError('');
+                } else {
+                    setError('Failed to delete article');
+                }
+            } catch (error) {
+                setError('Error deleting article: ' + error.message);
+            } finally {
+                setLoading(false);
+            }
+        }
+    };
+
+    const addSection = () => {
+        if (sectionForm.heading && sectionForm.paragraph) {
+            const newSection = {
+                heading: sectionForm.heading,
+                paragraph: sectionForm.paragraph
+            };
+            setArticleForm({
+                ...articleForm,
+                sections: [...articleForm.sections, newSection]
+            });
+            setSectionForm({ heading: '', paragraph: '' });
+        }
+    };
+
+    const removeSection = (index) => {
+        const updatedSections = articleForm.sections.filter((_, i) => i !== index);
+        setArticleForm({ ...articleForm, sections: updatedSections });
+    };
+
     const cancelEdit = () => {
         setEditingPart(null);
         setEditingVideo(null);
+        setEditingArticle(null);
         setPartForm({ name: '', price: '', description: '', brand: '', model: '', imageUrl: '', status: 'new' });
         setVideoForm({ url: '', description: '' });
+        setArticleForm({ title: '', description: '', imageUrl: '', author: '', published: false, tags: '', sections: [] });
+        setSectionForm({ heading: '', paragraph: '' });
     };
 
     return (
@@ -266,6 +386,12 @@ const AdminDashboard = () => {
                         onClick={() => setActiveTab('videos')}
                     >
                         الفيديوهات
+                    </button>
+                    <button
+                        className={`tab ${activeTab === 'articles' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('articles')}
+                    >
+                        المقالات
                     </button>
                 </div>
 
@@ -443,6 +569,163 @@ const AdminDashboard = () => {
                                         <div className="item-actions">
                                             <button onClick={() => handleVideoEdit(video)}>تعديل</button>
                                             <button onClick={() => handleVideoDelete(video._id)} className="delete">حذف</button>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                {activeTab === 'articles' && (
+                    <div className="tab-content">
+                        <h2>{editingArticle ? 'تعديل مقال' : 'إضافة مقال جديد'}</h2>
+                        <form onSubmit={handleArticleSubmit} className="form">
+                            <div className="form-row">
+                                <div className="form-group">
+                                    <label>عنوان المقال</label>
+                                    <input
+                                        type="text"
+                                        value={articleForm.title}
+                                        onChange={(e) => setArticleForm({ ...articleForm, title: e.target.value })}
+                                        required
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <label>المؤلف</label>
+                                    <input
+                                        type="text"
+                                        value={articleForm.author}
+                                        onChange={(e) => setArticleForm({ ...articleForm, author: e.target.value })}
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <label>وصف المقال</label>
+                                <textarea
+                                    value={articleForm.description}
+                                    onChange={(e) => setArticleForm({ ...articleForm, description: e.target.value })}
+                                    required
+                                />
+                            </div>
+                            <div className="form-row">
+                                <div className="form-group">
+                                    <label>رابط الصورة (اختياري)</label>
+                                    <input
+                                        type="url"
+                                        value={articleForm.imageUrl}
+                                        onChange={(e) => setArticleForm({ ...articleForm, imageUrl: e.target.value })}
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <label>العلامات (مفصولة بفواصل)</label>
+                                    <input
+                                        type="text"
+                                        value={articleForm.tags}
+                                        onChange={(e) => setArticleForm({ ...articleForm, tags: e.target.value })}
+                                        placeholder="تقنية, صيانة, نصائح"
+                                    />
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <label>
+                                    <input
+                                        type="checkbox"
+                                        checked={articleForm.published}
+                                        onChange={(e) => setArticleForm({ ...articleForm, published: e.target.checked })}
+                                    />
+                                    {' '}نشر المقال
+                                </label>
+                            </div>
+
+                            {/* Sections Management */}
+                            <div className="sections-management">
+                                <h3>أقسام المقال</h3>
+                                <div className="section-form">
+                                    <div className="form-row">
+                                        <div className="form-group">
+                                            <label>عنوان القسم</label>
+                                            <input
+                                                type="text"
+                                                value={sectionForm.heading}
+                                                onChange={(e) => setSectionForm({ ...sectionForm, heading: e.target.value })}
+                                            />
+                                        </div>
+                                        <div className="form-group">
+                                            <label>محتوى القسم</label>
+                                            <textarea
+                                                value={sectionForm.paragraph}
+                                                onChange={(e) => setSectionForm({ ...sectionForm, paragraph: e.target.value })}
+                                            />
+                                        </div>
+                                    </div>
+                                    <button type="button" onClick={addSection} className="add-section-btn">
+                                        إضافة قسم
+                                    </button>
+                                </div>
+
+                                {/* Display existing sections */}
+                                {articleForm.sections.length > 0 && (
+                                    <div className="sections-list">
+                                        <h4>الأقسام المضافة:</h4>
+                                        {articleForm.sections.map((section, index) => (
+                                            <div key={index} className="section-item">
+                                                <h5>{section.heading}</h5>
+                                                <p>{section.paragraph}</p>
+                                                <button type="button" onClick={() => removeSection(index)} className="remove-section-btn">
+                                                    حذف القسم
+                                                </button>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+
+                            <div className="form-actions">
+                                <button type="submit" disabled={loading}>
+                                    {loading ? 'جاري الحفظ...' : (editingArticle ? 'تحديث' : 'إضافة')}
+                                </button>
+                                {editingArticle && (
+                                    <button type="button" onClick={cancelEdit}>
+                                        إلغاء
+                                    </button>
+                                )}
+                            </div>
+                        </form>
+
+                        <div className="data-list">
+                            <h3>المقالات الموجودة</h3>
+                            <div className="list">
+                                {articles.map((article) => (
+                                    <div key={article._id} className="list-item">
+                                        <div className="item-image">
+                                            {article.imageUrl ? (
+                                                <img
+                                                    src={article.imageUrl}
+                                                    alt={article.title}
+                                                    onError={(e) => {
+                                                        e.target.style.display = 'none';
+                                                        e.target.nextSibling.style.display = 'flex';
+                                                    }}
+                                                />
+                                            ) : null}
+                                            <div className="image-placeholder">
+                                                <span>لا توجد صورة</span>
+                                            </div>
+                                        </div>
+                                        <div className="item-info">
+                                            <h4>{article.title}</h4>
+                                            <p>المؤلف: {article.author}</p>
+                                            <p>الحالة: {article.published ? 'منشور' : 'مسودة'}</p>
+                                            <p>عدد الأقسام: {article.sections ? article.sections.length : 0}</p>
+                                            {article.tags && article.tags.length > 0 && (
+                                                <p>العلامات: {article.tags.join(', ')}</p>
+                                            )}
+                                        </div>
+                                        <div className="item-actions">
+                                            <button onClick={() => handleArticleEdit(article)}>تعديل</button>
+                                            <button onClick={() => handleArticleDelete(article._id)} className="delete">حذف</button>
                                         </div>
                                     </div>
                                 ))}

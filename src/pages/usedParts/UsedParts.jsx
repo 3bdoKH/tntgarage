@@ -192,7 +192,6 @@ const UsedParts = () => {
             ) : (
                 <div>
                     <div className="parts-grid">
-                        {/* Show all results when searching, otherwise show only the visible count */}
                         {(searchTerm ? filteredParts : filteredParts.slice(0, visibleCount)).map((part) => (
                             <div key={part._id} className="part-card">
                                 <div
@@ -245,8 +244,6 @@ const UsedParts = () => {
                             </div>
                         ))}
                     </div>
-
-                    {/* Show "Load More" button only when not searching and there are more items to show */}
                     {!searchTerm && filteredParts.length > visibleCount && (
                         <div className="load-more-container">
                             <button onClick={loadMoreParts} className="load-more-btn">
@@ -261,8 +258,8 @@ const UsedParts = () => {
                 <h2>هل تحتاج مساعدة؟</h2>
                 <p>تواصل معنا للحصول على استشارة مجانية حول قطع الغيار الاستيراد المناسبة لسيارتك</p>
                 <div className="contact-buttons">
-                    <button className="primary-btn">اتصل بنا</button>
-                    <button className="secondary-btn">راسلنا على واتساب</button>
+                    <a className="primary-btn" href='tel:01111132621'>اتصل بنا</a>
+                    <a className="secondary-btn" href='https://wa.me/201111132621' target='_blank' rel='noopener noreferrer'>راسلنا على واتساب</a>
                 </div>
             </div>
         </div>

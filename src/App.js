@@ -11,6 +11,8 @@ import Videos from "./pages/videos/Videos";
 import Winch from "./pages/winch/Winch";
 import BmwGroup from "./pages/bmwGroup/BmwGroup";
 import VwGroup from "./pages/vwGroup/VwGroup";
+import Articles from "./pages/articles/Articles";
+import ArticleDetails from "./pages/articleDetails/ArticleDetails";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import Login from "./pages/admin/Login";
 
@@ -31,6 +33,8 @@ function App() {
             <Route path="/used-parts" element={<UsedParts />} />
             <Route path="/product/:id" element={<ProductDetails />} />
             <Route path="/videos" element={<Videos />} />
+            <Route path="/articles" element={<Articles />} />
+            <Route path="/article/:id" element={<ArticleDetails />} />
             <Route path="/winch" element={<Winch />} />
             <Route path="/bmw-group" element={<BmwGroup />} />
             <Route path="/vw-group" element={<VwGroup />} />
