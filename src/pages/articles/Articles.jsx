@@ -97,7 +97,7 @@ const Articles = () => {
                                     <div className="article-content">
                                         <h3>{article.title}</h3>
                                         <p className="article-description">{article.description}</p>
-                                        <div className="article-meta">
+                                        <div className="article-details-meta">
                                             <span className="author">بواسطة: {article.author}</span>
                                             <span className="date">
                                                 {new Date(article.createdAt).toLocaleDateString('ar-EG')}

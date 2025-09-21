@@ -179,13 +179,19 @@
     overflow: hidden;
 }
 
-.article-meta {
+.article-details-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 520px) {
+    .article-details-meta {
+        flex-direction: column;
+    }
 }
 
 .author {
